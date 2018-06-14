@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Ryan Hunter">
+	    <meta name="description" content="Code for Topic 6 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT261:02 - Topic 6, Javascript </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 6 </h1>
+        <h2>DOM Manipulation Using createElement, appendChild, insertBefore etc.</h2>
+        <h2>Ryan Hunter</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>       
+        <div id="startQuestion">
+
+            <h3>Select your game</h3>
+            <button id = "fortBtn" onclick="createFort()">I Play Fortnite</button>
+            <button id = "pubgBtn" onclick="createPubg()">I Play PUBG</button>
+            <br>
+        </div>
+        <div id="additionalElements"></div>
+        <script>
+            function createFort() {
+                //disable the party buttons
+                document.getElementById("pubgBtn").disabled = true; 
+                document.getElementById("fortBtn").disabled = true;
+                // create a new paragraph element
+                var para = document.createElement("P"); 
+                //create text node assigned to txt variable
+                var txt1 = document.createTextNode("You play Fortnite. Do you like running alone or with friends?");  
+                //append text to the p element
+                para.appendChild(txt1); 
+                //create two new button elements
+                var btn1 = document.createElement("BUTTON");
+                var btn2 = document.createElement("BUTTON");
+                //set onclick attribute to each button for FireFox browser
+                btn1.setAttribute("onclick", "FortAlone();");
+                btn2.setAttribute("onclick", "FortFriends();");
+                //set onclick attribute for IE and Chrome browsers
+                btn1.onclick = function() {FortAlone();};
+                btn2.onclick = function() {FortFriends();};
+
+                //create text to insert in buttons
+                var txt2 = document.createTextNode("I like running alone");
+                var txt3 = document.createTextNode("I like running with friends");
+                //append text into correct button elements
+                btn1.appendChild(txt2);
+                btn2.appendChild(txt3);
+                //add new elements to <main>
+                        
+                document.getElementById("additionalElements").appendChild(para);
+                document.getElementById("additionalElements").appendChild(btn1);
+                document.getElementById("additionalElements").appendChild(btn2);
+                
+                
+                
+            }
+            function createPubg() {
+                //disable the party buttons
+                document.getElementById("pubgBtn").disabled = true; 
+                document.getElementById("fortBtn").disabled = true;
+                // create a new paragraph element
+                var para = document.createElement("P"); 
+                //create text node assigned to txt variable
+                var txt1 = document.createTextNode("You play PUBG. Do you like running alone or with friends?You play Fortnite. Do you like running alone or with friends??");  
+                //append text to the p element
+                para.appendChild(txt1); 
+                //create two new button elements
+                var btn1 = document.createElement("BUTTON");
+                var btn2 = document.createElement("BUTTON");
+                //set onclick attribute for FireFox browser
+                btn1.setAttribute("onclick", "PUBGAlone();");
+                btn2.setAttribute("onclick", "PUBGFriends();");
+                //set onclick attribute for IE and Chrome browsers
+                btn1.onclick = function() {PUBGAlone();};
+                btn2.onclick = function() {PUBGFriends();};
+
+                //create text to insert in buttons
+                var txt2 = document.createTextNode("I like running alone");
+                var txt3 = document.createTextNode("I like running with friends");
+                //append text into correct button elements
+                btn1.appendChild(txt2);
+                btn2.appendChild(txt3);
+                //add new elements to <main>
+                        
+                document.getElementById("additionalElements").appendChild(para);
+                document.getElementById("additionalElements").appendChild(btn1);
+                document.getElementById("additionalElements").appendChild(btn2);               
+            }
+            
+            function FortAlone() {
+                var p = document.createElement("P");
+                var t = document.createTextNode("Nice! You must like being the lone wolf!");
+                p.appendChild(t);
+                document.getElementById("additionalElements").appendChild(p);
+            }
+            function FortFriends() {
+                var p = document.createElement("P");
+                var t = document.createTextNode("Nice! You must enjoy the fun times you can have with friends");
+                p.appendChild(t);
+                document.getElementById("additionalElements").appendChild(p);               
+            }
+            function PUBGAlone() {
+                var p = document.createElement("P");
+                var t = document.createTextNode("Nice! You must like being the lone wolf!");
+                p.appendChild(t);
+                document.getElementById("additionalElements").appendChild(p);
+            }
+            function PUBGFriends() {
+                var p = document.createElement("P");
+                var t = document.createTextNode("Nice! You must enjoy the fun times you can have with friends");
+                p.appendChild(t);
+                document.getElementById("additionalElements").appendChild(p);               
+            }           
+            
+            
+        </script>
+
+        
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 &copy; 2018 Ryan Hunter. All Rights Reserved. </p>
+    </footer>
+</html>
