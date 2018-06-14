@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Ryan Hunter">
+	    <meta name="description" content="Code for Topic 3 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Topic 3 </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 3 </h1>
+        <h2>Javascript - JSON Parse, Stringify</h2>
+        <h2>Ryan Hunter</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+	
+	<p>Enter the information below. Then click the 'Stringify and Parse It' button to see the results of the two stringify and parse methods.</p>
+        <p>
+            What is your Name? <br>
+            <input type="string" id="dname"> <br>
+            What is your E-Mail? <br>
+            <input type="string" id="demail"> <br>
+            What state do you live in? <br>
+            <input type="string" id="dstate"> <br>
+            What city do you live in <br>
+            <input type="string" id="dcity"> <br>
+            what is your major? <br>
+            <input type="string" id="dmajor"> <br>
+            
+        </p>
+        <button onclick="stringifyIt();">Stringify and Parse It</button>
+        <div id="responses">
+        </div>
+        
+        <script>
+            
+                
+                function stringifyIt() {
+                    
+                    document.getElementById('responses').innerHTML = "<h3>JSON.stringify Response:</h3><p id='stringifyResponse'></p> <h3>JSON.parse Response:</h3> <p id='parseResponse'></p>"
+                    //get input values from the html and put into object called student
+                    
+                    var student = {"name": document.getElementById("dname").value, 
+                                   "email": document.getElementById("demail").value,
+                                   "state": document.getElementById("dstate").value,
+								   "city": document.getElementById("dcity").value,
+                                   "major": document.getElementById("dmajor").value};
+                
+                    //convert object into string using JSON stringify
+                    var studentString = JSON.stringify(student);
+                    //print the JSON string onto the screen in the 'stringifyResponse' paragraph.
+                    document.getElementById('stringifyResponse').innerHTML = studentString;
+                   // )
+               
+                    //parse studentString variable into new studentObj object
+                    var studentObj = JSON.parse(studentString);
+                    //output new object to the screen in the parseResponse paragraph
+                    document.getElementById('parseResponse').innerHTML = "Student Information <br>" 
+                        + "----------------------------------------------------------------<br>"
+                        + "Name " + studentObj.name + "<br>" 
+                        + "E-Mail " + studentObj.email + "<br>"
+                        + "State " + studentObj.state + "<br>"
+                        + "City " + studentObj.city + "<br>"
+                        + "Major " + studentObj.major + "<br>";
+                
+                    
+                }
+            
+            
+        </script>
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 &copy; 2018 Ryan Hunter. All Rights Reserved. </p>
+    </footer>
+</html>
