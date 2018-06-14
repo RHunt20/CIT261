@@ -38,18 +38,24 @@
                 //disable the party buttons
                 document.getElementById("pubgBtn").disabled = true; 
                 document.getElementById("fortBtn").disabled = true;
+		    
                 // create a new paragraph element
                 var para = document.createElement("P"); 
+		    
                 //create text node assigned to txt variable
                 var txt1 = document.createTextNode("You play Fortnite. Do you like running alone or with friends?");  
+		    
                 //append text to the p element
                 para.appendChild(txt1); 
+		    
                 //create two new button elements
                 var btn1 = document.createElement("BUTTON");
                 var btn2 = document.createElement("BUTTON");
+		    
                 //set onclick attribute to each button for FireFox browser
                 btn1.setAttribute("onclick", "FortAlone();");
                 btn2.setAttribute("onclick", "FortFriends();");
+		    
                 //set onclick attribute for IE and Chrome browsers
                 btn1.onclick = function() {FortAlone();};
                 btn2.onclick = function() {FortFriends();};
@@ -57,11 +63,12 @@
                 //create text to insert in buttons
                 var txt2 = document.createTextNode("I like running alone");
                 var txt3 = document.createTextNode("I like running with friends");
+		    
                 //append text into correct button elements
                 btn1.appendChild(txt2);
                 btn2.appendChild(txt3);
-                //add new elements to <main>
-                        
+		    
+                //add new elements to <main                     
                 document.getElementById("additionalElements").appendChild(para);
                 document.getElementById("additionalElements").appendChild(btn1);
                 document.getElementById("additionalElements").appendChild(btn2);
