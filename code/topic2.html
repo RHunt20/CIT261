@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Ryan Hunter">
+	    <meta name="description" content="Code for Topic 1 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Topic 2 </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 2 </h1>
+        <h2>Javascript - Object Creation Functions, Properties, Methods, Instantiation</h2>
+        <h2>Ryan Hunter</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+		<h3>Pseudo Classical</h3>
+     
+        <button onclick="Ryan.printRecord();">Display Ryan</button>
+        <button onclick="Allison.printRecord();">Display Allison</button>
+     
+        <p id="response"></p>
+        
+        <script>
+            //example of pseudo classical
+            var member = function(name, age, state){            
+                this.name = name;
+                this.age = age;
+                this.state = state;
+   
+            };
+
+            member.prototype.printRecord = function(){
+            
+                document.getElementById("response").innerHTML = "Member Name: " + this.name + "<br>" + "Age: " + this.age + "<br>" + "State " + this.state;
+            };
+
+            //create new objects
+            var Ryan = new member("Ryan Hunter", 28, "Iowa");
+            var Allison = new member("Allison Engle", 24, "Iowa");            
+
+            
+        </script>
+        <h3>Prototypal </h3>
+        
+        <button onclick="Shane.printRecord2();">Display Shane</button>
+        <button onclick="Ben.printRecord2();">Display Ben</button>
+        
+        <p id="response2"></p>
+        <script>
+            //example of prototypal 
+            var member2 = function(name, age, state){
+                var object = Object.create(methods);
+                object.name = name;
+                object.age = age;
+                object.state = state;
+                return object;
+            }
+            
+            var methods = {
+                printRecord2: function() {
+                    //display data 
+                    document.getElementById("response2").innerHTML = "Member Name: " + this.name + "<br>" + "Age: " + this.age + "<br>" + "State: " + this.state;   
+                },
+                printName2: function() {
+                   //display name only on screen
+                    document.getElementById("response2").innerHTML = "Member Name: " + object.name;
+                }
+                
+            }
+            //create new objects
+            var Shane = new member2("Shane", 23, "Iowa");
+            var Ben = new member2("Ben", 22, "Iowa");
+            
+                
+        </script> 	 
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 &copy; 2018 Ryan Hunter. All Rights Reserved. </p>
+    </footer>
+</html>
