@@ -1,0 +1,56 @@
+
+
+            .obj_Ctr {text-align: center}
+            body { margin-right:10%; margin-left:10%; margin-top:1%; font-family: "verdana";}
+
+            header {background-color: #420D6B; height:150px; font-family: "verdana";}         
+            .header h1{margin-left: 10px;position:relative; top: 18px; left: 10px; color:white; font-size: 18pt;}
+            .header h2{margin-left: 10px;position:relative; top: 25px; left: 10px; color:white; font-size: 14pt;}
+            nav{
+                float: left;
+                max-width: 160px;
+                
+                border-right: solid #420D6B;
+            }
+            ul.topnav {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                                
+            }
+
+            ul.topnav li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 40px; /* height width for each cell */
+                text-decoration: none;
+            }
+
+            ul.topnav li a:hover:not(.active) {background-color: #420D6B;}
+
+            ul.topnav li a.active {background-color: #0BD2E8;}
+
+            main {margin-left: 170px; min-height: 150px; }
+
+            footer {margin-bottom: 0; max-height: 50px; background-color: #420D6B; text-decoration: none; color:white; font-size: 10pt;}
+		  #menu {display: none;}
+		#nav.js {
+			font-size: 14pt;
+            
+		}
+/* For Small Screens */   
+@media screen and (max-width: 39em) {
+        ul.topnav li.right, 
+        ul.topnav li {float: none;} 
+       header {height:100px;}
+       .header h1{font-size: 14px; margin-left: 10px;}
+       .header h2{font-size: 12px; margin-left: 10px;}     
+       body {margin-right:0%; margin-left:0%; margin-top:0%;}
+
+       	#nav.js {display: none; position: absolute; top: 20px; right: 50px; }
+    #menu {display: flex;position: absolute;top: 20px; right: 20px; color: white; }
+    main {margin-left: 10px; min-height: 150px; margin-top: 30px;}
+}
