@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Ryan Hunter">
+	    <meta name="description" content="Code for Topic 1 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Topic 1 </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 1 </h1>
+        <h2>Javascript - Loops, Conditional Statements, Functions, Arrays</h2>
+        <h2>Ryan Hunter</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+	<script>
+	
+        var dropLocations = ['Junk Junction', 'Haunted Hills', 'Anarchy Acres', 'Risky Reels', 'Pleasant Park', 'Tomato Town', 'Wailing Woods', 'Loot Lake', 'Lonely Lodge', 'Snobby Shores', 'Tilted Towers', 'Dusty Divot' , 'Retail Row', 'Greasy Grove', 'Shifty Shafts', 'Salty Spring', 'Fatal Fields', 'Flush Factory', 'Lucky Landing', 'Moisty Mire'];
+
+			function getRandomLocation() {
+				return Math.floor(Math.random() * dropLocations.length);
+			}
+
+			for (var i = 0; i < 1; i++) {
+			var removedItem = dropLocations.splice(getRandomLocation(dropLocations), 1);
+				document.writeln(removedItem)
+			}
+			
+			
+	</script>
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 &copy; 2018 Ryan Hunter. All Rights Reserved. </p>
+    </footer>
+</html>
