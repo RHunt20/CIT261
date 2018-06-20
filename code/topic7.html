@@ -48,7 +48,6 @@
                 <ul class="selections">
                     <li><a id="color1" href="#">Color Scheme 1</a></li>
                     <li><a id="color2" href="#">Color Scheme 2</a></li>
-                    <li><a id="color3" href="#">Color Scheme 3</a></li>
                     <li><a id="font1" href="#">Font Scheme 1</a></li>
                     <li><a id="font2" href="#">Font Scheme 2</a></li>
                 
@@ -64,9 +63,8 @@
             <script>
                 var a = document.getElementById("color1");
                 var b = document.getElementById("color2");
-                var c = document.getElementById("color3");
-                var d = document.getElementById("font1");
-                var e = document.getElementById("font2");
+                var c = document.getElementById("font1");
+                var d = document.getElementById("font2");
 				
                 a.onclick = function() {
                     resetMenuColors();
@@ -94,32 +92,20 @@
                     return false;
                 };
                 c.onclick = function() {
-                    resetMenuColors();
-                    var classToMod = document.getElementsByClassName("picture");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.borderColor = "red";}
-                    var classToMod = document.getElementsByClassName("paragraph");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.color = "maroon";}
-                    var classToMod = document.getElementsByClassName("contentContainer");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.backgroundColor = "indianred";}
-                    document.getElementById("color3").style.backgroundColor = "lightslategrey";
-                    return false;
-                };
-                d.onclick = function(){
                     resetMenuColors2();
                     var classToMod = document.getElementsByClassName("paragraph");
                     for(i=0; i<classToMod.length; i++) {classToMod[i].style.fontFamily = "comic sans MS";} 
                     document.getElementById("font1").style.backgroundColor = "lightslategrey";
                 }
-                e.onclick = function(){
+                d.onclick = function(){
                     resetMenuColors2();
                     var classToMod = document.getElementsByClassName("paragraph");
                     for(i=0; i<classToMod.length; i++) {classToMod[i].style.fontFamily = "verdana";} 
-                    document.getElementById("font2").style.backgroundColor = "lightslategrey";                    
-                }
+                    document.getElementById("font2").style.backgroundColor = "lightslategrey";
+             
                 function resetMenuColors() {
                     document.getElementById("color1").style.backgroundColor = "lightgrey";
                     document.getElementById("color2").style.backgroundColor = "lightgrey";
-                    document.getElementById("color3").style.backgroundColor = "lightgrey";
                 }
                 function resetMenuColors2() {
                     document.getElementById("font1").style.backgroundColor = "lightgrey";
