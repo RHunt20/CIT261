@@ -27,10 +27,11 @@
      <main>
        
         <section class="weather-container">
-				<!--Display Loading text while data is being retrieved-->
+				<!--Display Loading text-->
                 <div id="cover">
 					<div id="status">Loading...</div>
 				</div>
+		
 				<!--Setup containers for data -->
                 <h1 id="cityDisplay"></h1>
 				<h2>Current Conditions</h2>
@@ -50,7 +51,7 @@
             $(function () {
                 var status = $('#status');
 				
-                //get current location of user's computer
+                //get current location
                 (function getGeoLocation() {
                     status.text('Getting Location...');
                     if (navigator.geolocation) {
@@ -58,7 +59,7 @@
                             var lat = position.coords.latitude;
                             var long = position.coords.longitude;
 							
-                            // Call the getData function, send the lat and long
+                            // Call the getData function
                             getData(lat, long);
                         });
                     } else {
@@ -68,17 +69,14 @@
 				
                 function getData(lat, long){
 				
-                    // Get the data from the wunderground API
+                    // Get the data from the wunderground
                     jQuery(document).ready(function($) {
                     $.ajax({
 					
                         //get weatherunderground info from api using my key
                         url : "https://api.wunderground.com/api/987360510eace1b9/geolookup/conditions/q/" + lat + "," + long + ".json",
                         dataType : "jsonp",
-                        success : function(data) {
-						
-                            //write data to console for debug purposes
-                            console.log(data);
+                        success : function(data) {						                           
 							
                             //read in info
                             var location = data.location.city + ", " + data.location.state ;
