@@ -26,10 +26,36 @@
     </nav>
 <main>
         <style>
-           
+            .contentContainer {border-style: double; border-color: black; min-height: 300px;margin-top: 5px; background-color: lightgrey;}
+            #box1 {
+                width: 50px; 
+                height: 50px; 
+                padding: 5px; 
+                border: 4px solid blue; 
+                margin: 20px; 
+                background-color: lightblue; 
+                -webkit-transition: width 2s, background-color 2s; 
+                transition: width 2s, background-color 2s;
+                    
+            }
+            #box1:hover {
+                width: 350px;
+                background-color: red;
+            }
+            #pic1 {
+                height: 200px;
+                width: 300px;
+                border: 4px solid blue;
+                margin 20px;
+                
+                    
+            }
+            #picContainer1 {
+                height: 250px;
+                margin-left: 5px;
+            }         
         </style>
-        
-            <article class="contentContainer">
+        <article class="contentContainer">
             <h2>CSS3 Transition </h2>
             <p>Example of changing css box into a rectangle while changing color. Hover your mouse over the box to see what happens!</p>
             <div id="box1"></div>    
@@ -41,8 +67,7 @@
             </div>
             <button id="pic1Button" onclick="pic1TransFwd();">Transition 1</button>
             <button id="pic1Button2" onclick="pic1TransBack();">Transition 2</button>   
-            <br>
-            
+            <br>          
         </article>
         <script>
             
@@ -80,6 +105,6 @@
                 elementId.addEventListener(transEnd, zoomOut, false);
                 
                 function zoomOut(){elementId.style.cssText = "transition: width 4s, height 3s; width: 300px; height: 200px;";}
-            }
+            }       
         </script>
     </main>
