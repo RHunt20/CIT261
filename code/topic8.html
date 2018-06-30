@@ -6,7 +6,7 @@
 	    <meta name="author" content="Ryan Hunter">
 	    <meta name="description" content="Code for Topic 8 in CIT261">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Topic 7 </title>
+        <title> Topic 8 </title>
         <link rel="stylesheet" href="css/subpagesmain.css">  
         <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
     
@@ -26,148 +26,7 @@
     </nav>
 <main>
         <style>
-            .contentContainer {border-style: double; border-color: black; min-height: 300px;margin-top: 5px; background-color: lightgrey;}
-            #box1 {
-                width: 50px; 
-                height: 50px; 
-                padding: 5px; 
-                border: 4px solid blue; 
-                margin: 20px; 
-                background-color: lightblue; 
-                -webkit-transition: width 2s, background-color 2s; 
-                transition: width 2s, background-color 2s;
-                    
-            }
-            #box1:hover {
-                width: 350px;
-                background-color: red;
-            }
-            #pic1 {
-                height: 200px;
-                width: 300px;
-                border: 4px solid blue;
-                margin 20px;
-                
-                    
-            }
-            #picContainer1 {
-                height: 250px;
-                margin-left: 5px;
-            }
-            /* CSS and animations for frodo and middle earth */
-            #middleEarthContainer {
-                margin: 5px;
-                padding-top: 10px;
-                position: relative;
-                border: 4px solid green;
-                
-            }
-            #middleEarthImg {
-                width: 95%;
-                height: auto;
-                margin-left: 5px;
-                position: relative;
-            }
-            #frodo {
-                
-                position: absolute;
-                height: 10%;
-                width: auto;
-                /*Start in Lindon*/
-                left: 33%; 
-                top: 12%;
-                animation-fill-mode: forwards;
-                
-            }
-            /*Move to Mordor*/
-            @keyframes moveLindonMordor {
-                0% {top: 12%; left: 33%;} /*Lindon Position*/
-                20% {top: 20%; left: 45%;}
-                40% {top: 40%; left: 55%;}
-                60% {top: 40%; left: 67%;}
-                80% {top: 50%; left: 67%;}
-                100% {top: 50%; left: 75%;}
-            }
-            @keyframes moveRohanMordor {
-                0% {top: 40%; left: 55%;} /*Rohan Position*/
-                50% {top: 55%; left: 60%;}
-                100% {top: 50%; left: 75%;} /*Mordor Position*/
-            }
-            @keyframes moveGondorMordor {
-                0% {top: 50%; left: 53%;} /*Gondor Position*/
-                100% {top: 50%; left: 75%;} /*Mordor Position*/
-            }
-            /*Move to Lindon*/
-            @keyframes moveMordorLindon {
-                0% {top: 50%; left: 75%;}
-                20% {top: 50%; left: 67%;}
-                40% {top: 40%; left: 67%;}
-                60% {top: 40%; left: 55%;}
-                80% {top: 20%; left: 45%;}
-                100% {top: 12%; left: 33%;} /*Lindon Position*/
-                
-            }           
-            @keyframes moveRohanLindon {
-                0% {top: 40%; left: 55%;} /*Rohan Position*/
-                50% {top: 20%; left: 45%;}
-                100% {top: 12%; left: 33%;} /*Lindon Position*/
-                
-            }    
-            @keyframes moveGondorLindon {
-                0% {top: 50%; left: 53%;} /*Gondor Position*/
-                50% {top: 50%; left: 67%;}
-                100% {top: 12%; left: 33%;} /*Lindon Position*/
-                
-            } 
            
-            /*move to gondor*/
-            @keyframes moveRohanGondor {
-                0% {top: 40%; left: 55%;} /*Rohan Position*/
-                50% {top: 45%; left: 60%;}
-                100% {top: 50%; left: 53%;} /*Gondor Position*/
-            } 
-            @keyframes moveMordorGondor {
-                0% {top: 50%; left: 75%;} /*Mordor Position*/
-                100% {top: 50%; left: 53%;} /*Gondor Position*/
-            }
-            @keyframes moveLindonGondor {
-                0% {top: 12%; left: 33%;} /*Lindon Position*/
-                50% {top: 50%; left: 67%;}
-                100% {top: 50%; left: 53%;} /*Gondor Position*/
- 
-            } 
-            /*move to Rohan*/
-            @keyframes moveGondorRohan {
-                0% {top: 50%; left: 53%;} /*Gondor Position*/
-                50% {top: 45%; left: 60%;}
-                100% {top: 40%; left: 55%;} /*Rohan Position*/
- 
-            }   
-            @keyframes moveMordorRohan {
-                0% {top: 50%; left: 75%;} /*Mordor Position*/
-                50% {top: 55%; left: 60%;}
-                100% {top: 40%; left: 55%;} /*Rohan Position*/
-   
-            } 
-            @keyframes moveLindonRohan {
-                0% {top: 12%; left: 33%;} /*Lindon Position*/
-                50% {top: 20%; left: 45%;}
-                100% {top: 40%; left: 55%;} /*Rohan Position*/
-                
-                
-            }   
-            @keyframes killFrodo {
-                0% {height: 70px; transition: top .5s, left .5s; top: 50%; left: 50%;}
-                40% {height: 350px; top: 50%; left: 50%;}
-                60% {transform: rotate(15deg); }
-                70% {transform: rotate(50deg);}
-                80% {transform: rotate(90deg);}
-                90% {transform: rotate(85deg);}
-                93% {transform: rotate(90deg);}
-                96% {transform: rotate(85deg);}
-                100% {transform: rotate(90deg);}
-                
-            }
         </style>
         
             <article class="contentContainer">
@@ -183,20 +42,7 @@
             <button id="pic1Button" onclick="pic1TransFwd();">Transition 1</button>
             <button id="pic1Button2" onclick="pic1TransBack();">Transition 2</button>   
             <br>
-            <h2>CSS3 Animation using Javascript</h2>
-            <p>Move Frodo around middle earth using the bottons below. For best results, please view on a full size monitor.</p>
-            <div id="middleEarthContainer">
-                <img id="middleEarthImg" src="images/middleearth.jpg">
-                <img id="frodo" src="images/frodo.png">
-                <br>
-                <p id="currLoc">Frodo's Current Location: The Land of Lindon</p>
-                <button id="mordorBtn" onclick="travelToMordor();">Travel to Mordor</button>
-                <button id="gondorBtn" onclick="travelToGondor();">Travel to Gondor</button>
-                <button id="rohanBtn" onclick="travelToRohan();">Travel to Rohan</button>
-                <button id="lindonBtn" onclick="travelToLindon();">Travel to Lindon</button>
-                <button id="killBtn" onclick="killFrodo();">Kill Frodo and send him to the shire</button>
-                
-            </div>
+            
         </article>
         <script>
             
