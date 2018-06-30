@@ -44,11 +44,11 @@
         <article class="contentContainer">
             <aside id="selButtons">
                 <ul class="selections">
-                    <li><a id="color1" href="#">Color Scheme 1</a></li>
-                    <li><a id="color2" href="#">Color Scheme 2</a></li>
-                    <li><a id="color3" href="#">Color Scheme 3</a></li>
-                    <li><a id="font1" href="#">Font Scheme 1</a></li>
-                    <li><a id="font2" href="#">Font Scheme 2</a></li>
+                    <li><a id="color1" href="#">Colors 1</a></li>
+                    <li><a id="color2" href="#">Colors 2</a></li>
+                    <li><a id="color3" href="#">Colors 3</a></li>
+                    <li><a id="font1" href="#">Font Style 1</a></li>
+                    <li><a id="font2" href="#">Font Style 2</a></li>
                 
                 </ul>    
             </aside>
@@ -93,11 +93,11 @@
                 c.onclick = function() {
                     resetMenuColors();
                     var classToMod = document.getElementsByClassName("picture");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.borderColor = "red";}
+                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.borderColor = "SteelBlue ";}
                     var classToMod = document.getElementsByClassName("paragraph");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.color = "maroon";}
+                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.color = "Cyan";}
                     var classToMod = document.getElementsByClassName("contentContainer");
-                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.backgroundColor = "indianred";}
+                    for(i=0; i<classToMod.length; i++) {classToMod[i].style.backgroundColor = "Turquoise";}
                     document.getElementById("color3").style.backgroundColor = "lightslategrey";
                     return false;
                 };
