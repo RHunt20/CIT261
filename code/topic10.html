@@ -58,19 +58,19 @@
         <h2>HTML5 Tag &lt;video&gt;</h2>
         <p>The video below has 5 different video sources. Your browser will determine which format it can play and automatically start the video playing. the 'controls' and 'autoplay' are selected to display the play controls and to automatically play the video upon loading.</p>       
         <video id="TiltedHeadshot" controls autoplay>
-            <source src="video/small.mp4" type="video/mp4">
-            <source src="video/small.ogv" type="video/ogg">
-            <source src="video/small.webm" type="video/webm">
-            <source src="video/small.3gp" type="video/3gp">
-            <source src="video/small.flv" type="video/flv">
+            <source src="video/TiltedHeadshot.mp4" type="video/mp4">
+            <source src="video/TiltedHeadshot.ogv" type="video/ogg">
+            <source src="video/TiltedHeadshot.webm" type="video/webm">
+            <source src="video/TiltedHeadshot.3gp" type="video/3gp">
+            <source src="video/TiltedHeadshot.flv" type="video/flv">
         </video>
         <p>Here the video is again with the different sources. Use the buttons to 'play/pause' and change the size of the screen using javascript. Note the status of the video being displayed as well. This uses javascript and an event listener.</p>
         <video id="TiltedHeadshot2" >
-            <source src="video/small.mp4" type="video/mp4">
-            <source src="video/small.ogv" type="video/ogg">
-            <source src="video/small.webm" type="video/webm">
-            <source src="video/small.3gp" type="video/3gp">
-            <source src="video/small.flv" type="video/flv">
+            <source src="video/TiltedHeadshot.mp4" type="video/mp4">
+            <source src="video/TiltedHeadshot.ogv" type="video/ogg">
+            <source src="video/TiltedHeadshot.webm" type="video/webm">
+            <source src="video/TiltedHeadshot.3gp" type="video/3gp">
+            <source src="video/TiltedHeadshot.flv" type="video/flv">
         </video> <br>
         <p id="playStatus">Video Stopped</p> <br>
         <button onclick="startVid();">Play/Pause</button>
@@ -99,7 +99,7 @@
             ctx.beginPath(); ctx.moveTo(200, 100); ctx.lineTo(270, 90); ctx.stroke(); ctx.closePath();
             
             //Functions and script for the second video player
-            var demoVideo = document.getElementById("TiltedHeadshot2");
+            var demoVideo = document.getElementById("demoVid2");
             
             function startVid() {
                 //Play or Pause the video depending on it's current state.
