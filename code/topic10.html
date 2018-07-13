@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Ryan Hunter">
+	    <meta name="description" content="Code for Topic 10 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT261:02 - Topic 10, HTML5 Tags - Video, Audio, and Canvas</title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <style>
+            #drawing_window {
+                width: 300px;
+                height: 150px;
+                background-color: cornflowerblue;
+                border: 4px solid black;
+                
+            } 
+            #demoVid {
+                width: 90%;
+                height: auto;
+                position: relative;
+            }
+            #demoVid2 {
+                width: 90%;
+                height: auto;
+                position: relative;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            #playStatus {
+                font-size: 8pt;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 10 </h1>
+        <h2>HTML5 Tags - Video, Audio, and Canvas</h2>
+        <h2>Ryan Hunter </h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        
+        <h2>HTML5 Tag &lt;canvas&gt;</h2>
+        <p>The rectangle below is a canvas tag with a border around it. Shapes can be drawn inside the cnavas tag using javascript.</p>
+        <canvas id="drawing_window">
+               
+        </canvas>
+        <h2>HTML5 Tag &lt;video&gt;</h2>
+        <p>The video below has 5 different video sources. Your browser will determine which format it can play and automatically start the video playing. the 'controls' and 'autoplay' are selected to display the play controls and to automatically play the video upon loading.</p>       
+        <video id="TiltedHeadshot" controls autoplay>
+            <source src="video/small.mp4" type="video/mp4">
+            <source src="video/small.ogv" type="video/ogg">
+            <source src="video/small.webm" type="video/webm">
+            <source src="video/small.3gp" type="video/3gp">
+            <source src="video/small.flv" type="video/flv">
+        </video>
+        <p>Here the video is again with the different sources. Use the buttons to 'play/pause' and change the size of the screen using javascript. Note the status of the video being displayed as well. This uses javascript and an event listener.</p>
+        <video id="TiltedHeadshot2" >
+            <source src="video/small.mp4" type="video/mp4">
+            <source src="video/small.ogv" type="video/ogg">
+            <source src="video/small.webm" type="video/webm">
+            <source src="video/small.3gp" type="video/3gp">
+            <source src="video/small.flv" type="video/flv">
+        </video> <br>
+        <p id="playStatus">Video Stopped</p> <br>
+        <button onclick="startVid();">Play/Pause</button>
+        <button onclick="bigVid();">Large Screen</button>
+        <button onclick="smallVid();">Small Screen</button>
+        <h2>HTML5 Tag &lt;audio&gt;</h2>
+        <p>The audio track below have the 'controls' selected to display the play controls. Start to hear the relaxing ocean.</p> 
+        <audio id="demoAud" controls>
+            <source src="audio/ocean_edge.mp3" type="audio/mp3">
+            <source src="audio/ocean_edge.wav" type="audio/wav">
+        </audio>
+        
+        <script>
+            var draw = document.getElementById("drawing_window");
+            var ctx = draw.getContext("2d");
+            ctx.beginPath();
+            //arc(x, y, radius, startAngle, endAngle)
+            ctx.arc(75, 125, 20, 0, 2*Math.PI);
+            ctx.stroke(); ctx.closePath();
+            ctx.beginPath(); ctx.arc(75, 125, 15, 0, 2*Math.PI); ctx.stroke(); ctx.closePath();
+            ctx.beginPath(); ctx.arc(175, 125, 20, 0, 2*Math.PI); ctx.stroke(); ctx.closePath();
+            ctx.beginPath(); ctx.arc(175, 125, 15, 0, 2*Math.PI); ctx.stroke(); ctx.closePath();
+            ctx.beginPath(); ctx.arc(175, 125, 20, 0, 2*Math.PI); ctx.stroke(); ctx.closePath();
+            
+            ctx.beginPath(); ctx.rect(50, 50, 150, 50); ctx.stroke(); ctx.closePath();
+            ctx.beginPath(); ctx.moveTo(200, 100); ctx.lineTo(270, 90); ctx.stroke(); ctx.closePath();
+            
+            //Functions and script for the second video player
+            var demoVideo = document.getElementById("TiltedHeadshot2");
+            
+            function startVid() {
+                //Play or Pause the video depending on it's current state.
+                demoVideo.addEventListener("ended", dispStop);
+                if (demoVideo.paused) {
+                    document.getElementById('playStatus').innerHTML = "Playing Video...";
+                    demoVideo.play();
+                } else {
+                    document.getElementById('playStatus').innerHTML = "Video Paused...";
+                    demoVideo.pause();
+                }
+                
+            }
+            function bigVid() {
+                demoVideo.style.cssText = "width: 90%; margin-left: 5%; margin-right: 5%;";   
+                
+            }
+            function smallVid() {
+                demoVideo.style.cssText = "width: 50%;margin-left: 25%; margin-right: 25%;";
+                
+            }
+            function dispStop() {
+                document.getElementById("playStatus").innerHTML = "Video Stopped.";
+            }
+                                        
+        </script>
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 &copy; 2018 Ryan Hunter. All Rights Reserved. </p>
+    </footer>
+</html>
