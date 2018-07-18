@@ -62,7 +62,7 @@
             <h2>CSS3 Transition using Javascript</h2>
             <p>Click the buttons below to make the image collapse, change pictures and expand back again.</p>
             <div id="picContainer1">
-                <img class="img1" id="pic1" src="images/byui2.jpg"><br>
+                <img class="img1" id="pic1" src="images/omega.jpg"><br>
 
             </div>
             <button id="pic1Button" onclick="pic1TransFwd();">Transition 1</button>
@@ -89,7 +89,7 @@
                 var elementId = document.getElementById("pic1");
                 elementId.addEventListener(transEnd, cngImg1, false);
                 elementId.style.cssText = "transition: width 2s, height 1s; width: 1px; height: 1px";
-                function cngImg1() {document.getElementById("pic1").src = "images/byu.jpg";}
+                function cngImg1() {document.getElementById("pic1").src = "images/ragnarok.jpg";}
                 
                 elementId.addEventListener(transEnd, zoomOut, false);
                 
@@ -101,7 +101,7 @@
                 elementId.addEventListener(transEnd, cngImg0, false);
                 elementId.style.cssText = "transition: width 2s, height 1s; width: 1px; height: 1px";
                 
-                function cngImg0() {document.getElementById("pic1").src = "images/byui2.jpg";}
+                function cngImg0() {document.getElementById("pic1").src = "images/omega.jpg";}
                 elementId.addEventListener(transEnd, zoomOut, false);
                 
                 function zoomOut(){elementId.style.cssText = "transition: width 4s, height 3s; width: 300px; height: 200px;";}
