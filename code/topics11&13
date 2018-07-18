@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Jason Chantry">
+	    <meta name="description" content="Code for Topic 11 and 13 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT261:02 - Topic 11 and 13, Designing, Defining, and Triggering CSS3 Transitions and Animations without Custom Libraries</title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <style>
+            #Images {
+                width: 202px;
+                height: 118px;
+                background-color: steelblue;
+                border: 2px solid black; 
+                position: relative;
+                border-radius: 2px;
+                
+                
+            }
+            #Images img {
+                height: 108px;
+                width: 192px;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+            }
+            #racer1 {
+                width: 20px;
+                height: 30px;
+                background-color: red;
+                position: relative;
+                animation: move10 3s linear infinite;
+               
+                animation-play-state: paused; 
+                
+            }
+            #racer1:hover {
+                animation-play-state: running;
+            }
+            #racer2 {
+                width: 20px;
+                height: 30px;
+                background-color: green;
+                position: relative;
+                animation: move10 3s linear infinite;
+               
+                animation-play-state: paused; 
+            }
+             #racer2:hover {
+                animation-play-state: running;
+            }
+            #racer3 {
+                width: 20px;
+                height: 30px;
+                background-color: blue;
+                position: relative;
+                animation: move10 3s linear infinite;
+               
+                animation-play-state: paused; 
+            }
+            #racer3:hover {
+                animation-play-state: running;
+            }
+            #racer4 {
+                width: 20px;
+                height: 30px;
+                background-color: yellow;
+                position: relative;
+                animation: move10 3s linear infinite;
+               
+                animation-play-state: paused;                 
+            }
+            #racer4:hover {
+                animation-play-state: running;
+            }
+            #racer5 {
+                width: 20px;
+                height: 30px;
+                background-color: orange;
+                position: relative;
+                animation: move10 3s linear infinite;
+               
+                animation-play-state: paused;                 
+            }
+            #racer5:hover {
+                animation-play-state: running;
+            }
+            @keyframes move10 {
+                from {width: 20px;}
+                to {width: 95%}
+            }
+        </style>
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 11&amp;13 </h1>
+        <h2>Designing, Defining, and Triggering CSS3 Transitions and Animations without Custom Libraries</h2>
+        <h2>Jason Chantry - Group 6</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.html">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <h2>CSS3 Transition</h2>
+        <p>Start the image slide show below This is using CSS3 transitions and JS. There is a 5s delay. </p>
+        
+        <button id="startImg" onclick="startImgShow();">Start Image Show</button>
+        <br>
+        <div id="Images">
+            <img id="imgTag" src="images/mountain1.jpg" alt="Mountain 1 Image">    
+        </div>
+        <br>
+        <h2>CSS3 Animation</h2>
+        <p>Hover over the rectangles below to move them across the screen. </p>
+        <div id="racer1"></div>
+        <div id="racer2"></div>
+        <div id="racer3"></div>
+        <div id="racer4"></div>
+        <div id="racer5"></div>
+        <br>
+        <h2>Other Transition and Animation Examples</h2>
+        <p>Click <a href="topic8.html">here</a> for other transition and animation examples using CSS3.</p>
+        
+        <script>
+            ImgIndex = 0;
+            
+            function startImgShow() {
+                document.getElementById("imgTag").style.cssText = "transition: width 2s; width: 0px; transition-delay: 5s;";
+                document.getElementById("imgTag").addEventListener("transitionend", advImg);    
+            }
+            function advImg() {    
+                document.getElementById("imgTag").removeEventListener("transitionend", advImg);
+                
+                if (ImgIndex==0) {
+                    document.getElementById("imgTag").src = "images/mountain2.jpg" ;
+                    ImgIndex = 1;
+                    
+                } else if (ImgIndex == 1) {
+                    document.getElementById("imgTag").src = "images/mountain3.jpg" ;
+                    ImgIndex = 2;
+                                      
+                } else if (ImgIndex == 2) {
+                    document.getElementById("imgTag").src = "images/mountain1.jpg" ;
+                    ImgIndex = 0;
+                }
+                document.getElementById("imgTag").style.cssText = "transition: width 2s; width: 192px; transition-delay: 0s;";
+                document.getElementById("imgTag").addEventListener("transitionend", startImgShow);
+            }    
+        </script>
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://jasonchantry.pw/cit261>jasonchantry.pw/cit261</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
+    </footer>
+</html>
